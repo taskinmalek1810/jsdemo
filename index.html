@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>JavaScript Demo</title>
+</head>
+
+<body>
+    <div class="container">
+        <form name="myform" id="myform">
+            <div class="row">
+                <div class="col-25"><label for="name">Name<i>*</i></label></div>
+                <div class="col-75"><input type="text" name="name" id="name" placeholder="Your Name..."
+                        onchange="validationForm()">
+                    <span id="nameerr"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25"><label for="email">Email<i>*</i></label></div>
+                <div class="col-75"><input type="email" name="email" id="email" placeholder="Your email..."
+                        onchange="validationForm()">
+                    <span id="emailerr"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25"><label for="gender">Gender<i>*</i></label></div>
+                <div class="col-75">
+                    <input type="radio" name="gender" id="male" value="Male"><label for="Male"
+                        onchange="getGender()">Male</label>
+                    <input type="radio" name="gender" id="female" value="Female"><label for="Female"
+                        onchange="getGender()">Female</label><br>
+                    <span id="gendererr"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25"><label for="hobby">Hobby<i>*</i></label></div>
+                <div class="col-75">
+                    <input type="checkbox" class="hobby" name="Reading" id="Reading" value="Reading"
+                        onchange="getHobby()"><label for="Reading">Reading</label>
+                    <input type="checkbox" class="hobby" name="Travelling" id="Travelling" value="Travelling"
+                        onchange="getHobby()"><label for="Travelling">Travelling</label>
+                    <input type="checkbox" class="hobby" name="Sports" id="Sports" value="Sports"
+                        onchange="getHobby()"><label for="Sports">Sports</label><br>
+                    <span id="hobbyerr"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25"><label for="age">Age<i>*</i></label></div>
+                <div class="col-75"><input type="number" name="age" id="age" placeholder="Your Age..."
+                        onchange="validationForm()">
+                    <span id="ageerr"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25"><label for="country">Country<i>*</i></label></div>
+                <div class="col-75">
+                    <select name="country" id="country" onchange="populateState(this.id); validationForm()">
+                        <!-- from js code -->
+                    </select>
+                    <span id="countryerr"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25"><label for="state">State<i>*</i></label></div>
+                <div class="col-75">
+                    <select name="state" id="state" onchange="populateCity(this.id); validationForm()">
+                        <!-- from js code -->
+                    </select>
+                    <span id="stateerr"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25"><label for="city">City<i>*</i></label></div>
+                <div class="col-75">
+                    <select name="city" id="city" onchange="validationForm()">
+                        <!-- from js code -->
+                    </select>
+                    <span id="cityerr"></span>
+                </div>
+            </div>
+            <div class="row"><input type="button" value="SUBMIT" id="submit">
+                <div id="buttons"></div>
+            </div>
+        </form>
+    </div>
+
+    <div class="table" id="table">
+        <div class="search">
+            <label>
+                <input type="text" name="search" id="search" placeholder="Search Here...!!!" onchange="searchFunc()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <select name="sorting" id="sorting" onchange="sortFunc(0)">
+                    <option value="">---Select---</option>
+                    <option value="Ascending">Ascending</option>
+                    <option value="Descending">Descending</option>
+                </select>
+            </label>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Hobby</th>
+                    <th>Age</th>
+                    <th>Country</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Time</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody id="tabledata">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="script_demo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --green1: #7286D3;
+    --green2: #8EA7E9;
+    --green3: #E5E0FF;
+    --green4: #FFF2F2;
+    --white: #fff;
+    --black: #000;
+    --succes-color: #2ecc71;
+    ;
+    --error-color: #e74c3c;
+}
+
+.container {
+    border-radius: 5px;
+    border: 2px solid var(--green2);
+    padding: 20px;
+    margin: 5% 30%;
+    box-shadow: 0 2px 10px var(--green4), 0 2px 10px var(--green3), 0 2px 10px var(--green2);
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+.col-25 {
+    margin-top: 10px;
+    width: 20%;
+    font-size: large;
+    font-style: oblique;
+}
+
+.col-25 i {
+    color: var(--error-color);
+}
+
+.col-75 {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+input[type=text],
+input[type=number],
+input[type=email],
+select {
+
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    margin: 12px;
+    border-radius: 10px;
+}
+
+input[type=submit] {
+    width: 100%;
+    background: var(--green1);
+    color: var(--white);
+    font-size: medium;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+}
+
+input[type=button] {
+    width: 100%;
+    background: var(--green1);
+    color: var(--white);
+    font-size: medium;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+#delete {
+    width: 100%;
+    background: var(--error-color);
+    color: var(--white);
+    font-size: medium;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+#edit {
+    width: 100%;
+    background: var(--succes-color);
+    color: var(--white);
+    font-size: medium;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.myform.success input {
+    border-color: var(--black);
+}
+
+.myform.error input {
+    border-color: var(--error-color);
+}
+
+.myform span {
+    color: var(--error-color);
+    visibility: hidden;
+}
+
+span {
+    color: var(--error-color);
+}
+
+.myform.error span {
+    visibility: visible;
+}
+
+.table {
+    margin: 5% 25%;
+}
+
+.table table {
+    width: 70%;
+    justify-content: center;
+    align-self: center;
+    margin-top: 20px;
+    width: 100%;
+
+}
+
+table th {
+    background: var(--green1);
+    color: var(--white);
+    padding: 10px;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: var(--green3);
+}
+
+table tr {
+    background: var(--green4);
+}
+
+table td {
+    padding: 10px;
+}
+
+.search label {
+    display: flex;
+    flex-direction: row;
+}
+
+.search select {
+    width: fit-content;
+}
+
+.search input {
+    padding-left: 50px;
+    margin-right: 10px;
+}
+
+.search label i {
+    position: absolute;
+    font-size: 1.20rem;
+    left: 26%;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container {
+        margin: 10px 0;
+    }
+
+    .col-25,
+    .col-75 {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .table {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .search label i {
+        left: 30px;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead tr {
+        display: none;
+    }
+
+    tr {
+        border: 1px solid var(--green1);
+        display: flex;
+        flex-direction: column;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid var(--white);
+        display: flex;
+    }
+
+    td:before {
+        flex: 1;
+    }
+
+    td:nth-of-type(n):before{
+        font-style: oblique;
+        font-size: large;
+    }
+    td:nth-of-type(1):before {
+        content: "Name";
+    }
+
+    td:nth-of-type(2):before {
+        content: "Email";
+    }
+
+    td:nth-of-type(3):before {
+        content: "Gender ";
+    }
+
+    td:nth-of-type(4):before {
+        content: "Hobby";
+    }
+
+    td:nth-of-type(5):before {
+        content: "Age";
+    }
+
+    td:nth-of-type(6):before {
+        content: "Country";
+    }
+
+    td:nth-of-type(7):before {
+        content: "State";
+    }
+
+    td:nth-of-type(8):before {
+        content: "City";
+    }
+
+    td:nth-of-type(9):before {
+        content: "Time";
+    } 
+}
